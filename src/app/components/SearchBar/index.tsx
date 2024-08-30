@@ -3,14 +3,23 @@
 import { useEffect, useState, KeyboardEvent, useRef } from "react";
 import localities from "../../localities.json";
 
-interface Result {
-  cityName: string;
-  localityName: string;
-  localityId: string;
-  latitude: number;
-  longitude: number;
-  device_type: string;
-}
+type Result =
+  | {
+      cityName: string;
+      localityName: string;
+      localityId: string;
+      latitude: number;
+      longitude: number;
+      device_type: string;
+    }
+  | {
+      cityName: string;
+      localityName: string;
+      localityId: string;
+      latitude: string;
+      longitude: number;
+      device_type: number;
+    };
 
 export default function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
