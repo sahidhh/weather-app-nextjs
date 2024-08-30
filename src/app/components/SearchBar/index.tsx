@@ -54,7 +54,7 @@ export default function SearchBar() {
           return prevIndex;
         });
       } else if (e.key === "Enter" && selectedIndex >= 0) {
-        window.location.href = `http://localhost:3000/dashboard?localityId=${results[selectedIndex].localityId}`;
+        window.location.href = `/dashboard?localityId=${results[selectedIndex].localityId}`;
       }
     }
   };
